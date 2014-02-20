@@ -25,7 +25,7 @@ func main() {
 
   m.Get("/", func(db *sql.DB) string {
     var plus string
-    _ := db.QueryRow("SELECT 1+1 as plus").Scan(&plus)
+    db.QueryRow("SELECT 1+1 as plus").Scan(&plus)
     return plus
   })
 }
